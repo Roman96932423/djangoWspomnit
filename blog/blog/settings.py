@@ -41,7 +41,8 @@ GLOBAL_APPS = [
 ]
 
 LOCAL_APPS = [
-    'users'
+    'users',
+    'web'
 ]
 
 INSTALLED_APPS = GLOBAL_APPS + LOCAL_APPS

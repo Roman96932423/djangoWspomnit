@@ -1,5 +1,4 @@
 from django.contrib.auth.models import UserManager as BaseUserManager
-from django.core.exceptions import ObjectDoesNotExist
 
 
 class UserManager(BaseUserManager):
