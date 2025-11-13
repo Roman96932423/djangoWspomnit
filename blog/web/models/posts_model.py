@@ -7,6 +7,9 @@ from django.db.models import (
     ForeignKey,
     CASCADE
     )
+from django_resized import ResizedImageField
+
+from utils.photo_path import get_photo_path
 
 
 class Post(Model):
@@ -14,6 +17,12 @@ class Post(Model):
     content = TextField(null=False, blank=False)
     created_at = DateTimeField(auto_now_add=True)
     created_by = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE)
+    header_image = ResizedImageField(
+        null=True, blank=True,
+        size=[700, 220],
+        quality=100,
+        upload_to = get_photo_path
+    )
     
     def __str__(self) -> str:
         return self.title
