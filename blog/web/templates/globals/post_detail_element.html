@@ -1,28 +1,23 @@
 <div class="w3-card-4 w3-margin w3-white">
-	{% if post.header_image %}
-	<img src="media/{{ post.header_image }}" alt="Norway" style="width: 100%" />
+	{% if object.header_image %}
+		<img src="media/{{ object.header_image }}" alt="Norway" style="width: 100%" />
 	{% endif %}
 	<div class="w3-container">
-		<h3><b>{{ post.title }}</b></h3>
+		<h3><b>{{ object.title }}</b></h3>
 		<h5>
 			Created at:
-			<span class="w3-opacity">{{ post.created_at }}</span>
+			<span class="w3-opacity">{{ object.created_at }}</span>
 		</h5>
 		<h5>
 			Created by:
-			<span class="w3-opacity">{{ post.created_by }}</span>
+			<span class="w3-opacity">{{ object.created_by }}</span>
 		</h5>
 	</div>
 
 	<div class="w3-container">
-		<p>{{ post.teaser }}</p>
+		<p>{{ object.content }}</p>
 		<div class="w3-row">
 			<div class="w3-col m8 s12">
-				<p>
-					<button class="w3-button w3-padding-large w3-white w3-border">
-						<a href="{% url 'post_detail' post.pk %}">READ MORE »</a>
-					</button>
-				</p>
 			</div>
 			<div class="w3-col m4 w3-hide-small">
 				<p>

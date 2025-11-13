@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	{% include 'globals/head.html' %}
+	<body class="w3-light-grey">
+		<div class="w3-content" style="max-width: 1400px">
+			{% include 'globals/header.html' %}
+			<!-- Grid -->
+			<div class="w3-row">
+				<!-- Blog entries -->
+				<div class="w3-col l8 s12">
+					{% include 'globals/post_detail_element.html' %}
+					<hr />
+					<!-- END BLOG ENTRIES -->
+				</div>
+				<!-- END GRID -->
+			</div>
+			<br />
+			<!-- END w3-content -->
+		</div>
+		{% include 'globals/footer.html' %}
+	</body>
+</html>
