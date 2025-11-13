@@ -41,12 +41,12 @@
 				<div class="w3-col l4">
 					<!-- About Card -->
 					<div class="w3-card w3-margin w3-margin-top">
-						{% if user_image %}
-							<img src="media/{{ user_image }}" style="width: 100%" />
+						{% if blog_owner.user_image %}
+						<img src="{{ blog_owner.user_image.url }}" style="width: 100%" />
 						{% endif %}
 						<div class="w3-container w3-white">
-							<h4><b>{{ user_name }}</b></h4>
-							<p>{{ user_about }}</p>
+							<h4><b>{{ blog_owner }}</b></h4>
+							<p>{{ blog_owner.about_user }}</p>
 						</div>
 					</div>
 					<hr />

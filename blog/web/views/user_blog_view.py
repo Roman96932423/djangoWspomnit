@@ -10,7 +10,6 @@ User = get_user_model()
 
 class UserBlogView(ListView):
     model = Post
-    template_name = 'globals/index.html'
     
     def get(self, request, pk, **kwargs):
         self.user = get_object_or_404(User, pk=pk)
@@ -25,9 +24,7 @@ class UserBlogView(ListView):
         
         context.update({
             'title': f'Blog by: {self.user}',
-			'user_name': self.user,
-			'user_about': self.user.about_user,
-            'user_image': self.user.user_image
+			'blog_owner': self.user,
 		})
         
         return context

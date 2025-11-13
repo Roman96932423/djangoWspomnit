@@ -1,6 +1,6 @@
 <div class="w3-card-4 w3-margin w3-white">
 	{% if post.header_image %}
-	<img src="media/{{ post.header_image }}" alt="Norway" style="width: 100%" />
+	<img src="{{ post.header_image.url }}" alt="Norway" style="width: 100%" />
 	{% endif %}
 	<div class="w3-container">
 		<h3><b>{{ post.title }}</b></h3>
