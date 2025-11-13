@@ -41,7 +41,9 @@
 				<div class="w3-col l4">
 					<!-- About Card -->
 					<div class="w3-card w3-margin w3-margin-top">
-						<img src={% static "img/avatar_g.jpg" %} style="width: 100%" />
+						{% if user_image %}
+							<img src="media/{{ user_image }}" style="width: 100%" />
+						{% endif %}
 						<div class="w3-container w3-white">
 							<h4><b>{{ user_name }}</b></h4>
 							<p>{{ user_about }}</p>

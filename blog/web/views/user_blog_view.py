@@ -26,7 +26,8 @@ class UserBlogView(ListView):
         context.update({
             'title': f'Blog by: {self.user}',
 			'user_name': self.user,
-			'user_about': self.user.about_user
+			'user_about': self.user.about_user,
+            'user_image': self.user.user_image
 		})
         
         return context
