@@ -1,5 +1,5 @@
 from django.urls import path
-from django.views.generic import DetailView, ListView, UpdateView
+from django.views.generic import DetailView, ListView, UpdateView, CreateView
 
 from web.views import UserBlogView
 from web.models import Post
@@ -20,5 +20,12 @@ urlpatterns = [
         model=Post,
         fields=('title', 'teaser', 'content', 'header_image'),
         success_url='/post-detail/{id}'
-        ), name='post_update')
+        ), name='post_update'),
+    
+    # Strona do dodawania posta
+    path('post-create/', CreateView.as_view(
+        model=Post,
+        fields = ('title', 'teaser', 'content', 'header_image', 'created_by'),
+        success_url='/post-detail/{id}'
+        ), name='post_create')
 ]
