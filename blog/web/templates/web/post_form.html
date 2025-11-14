@@ -10,9 +10,11 @@
 			<div class="w3-row">
 				<!-- Blog entries -->
 				<div class="w3-col l8 s12">
-					{% for post in object_list %}
-						{% include 'globals/post_list_element.html' %}
-					{% endfor %}
+					<form class="vertical" method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						{{ form }}
+						<input type="submit" value="save">
+					</form>
 				</div>
 				<!-- Introduction menu -->
 				<div class="w3-col l4">
